@@ -104,11 +104,6 @@ class AuthController {
     const { code } = req.query;
 
     try {
-      console.log('⛳️ googleClientId:', config.googleClientId);
-      console.log('⛳️ googleClientSecret:', config.googleClientSecret);
-      console.log('⛳️ googleRedirectUri:', config.googleRedirectUri);
-      console.log('⛳️ CODE:', code);
-
       const { tokens } = await googleClient.getToken({
         code,
         redirect_uri: config.googleRedirectUri,

@@ -18,7 +18,8 @@ const midleware = (app) => {
   // Middleware для підтримки CORS (Cross-Origin Resource Sharing)
   app.use(
     cors({
-      origin: 'http://localhost:5173',
+      // origin: 'http://localhost:5173',
+      origin: 'https://elaborate-fox-8284f9.netlify.app',
       credentials: true,
     })
   );
