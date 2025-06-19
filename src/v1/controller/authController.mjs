@@ -108,6 +108,8 @@ class AuthController {
         code,
         redirect_uri: config.googleRedirectUri,
       });
+      console.log('Google callback code:', code);
+      console.log('Google token response:', tokens);
 
       const ticket = await googleClient.verifyIdToken({
         idToken: tokens.id_token,
