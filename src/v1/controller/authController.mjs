@@ -102,14 +102,14 @@ class AuthController {
   //--------Login & Register Google---------
   static async googleCallbackLogin(req, res) {
     const { code } = req.query;
+    console.log('CODE:', code);
+    console.log('Redirect URI (backend):', config.googleRedirectUri);
 
     try {
       const { tokens } = await googleClient.getToken({
         code,
         redirect_uri: config.googleRedirectUri,
       });
-      console.log('Google callback code:', code);
-      console.log('Google token response:', tokens);
 
       const ticket = await googleClient.verifyIdToken({
         idToken: tokens.id_token,
