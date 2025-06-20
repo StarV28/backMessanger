@@ -27,6 +27,7 @@ const auth = (app) => {
       '/api/v1/auth/me',
       '/api/v1/user/avatar',
       '/api/v1/user/edit',
+      '/api/ping',
     ];
     // Перевірка, чи шлях потребує авторизації
     if (!openPathes.includes(req.path)) {
